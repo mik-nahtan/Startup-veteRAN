@@ -1,5 +1,11 @@
 # Deploy to Render
 
+## Free preview
+
+To try the website without a paid service, select branch `website-launch` and Blueprint Path `render-free.yaml`. It specifies the free plan with no paid disk. Review Render's summary before deploying; do not approve a paid resource for this option. The site shows a preview notice and disables payment links. Use test details only: records may be lost when the free service restarts or redeploys, and the service may sleep when idle. This is not the production setup for recruiting real applicants.
+
+## Persistent production setup
+
 The included Blueprint (`render.yaml`) deploys the website and API together with persistent storage for applications and interest lists. **This configuration uses a paid Starter web service and a persistent disk. Review Render's displayed price before creating resources.** A free service without persistent storage is not suitable for collecting real applications because records can be lost on redeployment or restart.
 
 1. In Render, connect GitHub and grant access to `mik-nahtan/Startup-veteRAN`.

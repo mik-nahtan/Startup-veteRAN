@@ -205,7 +205,8 @@ export function createApp(options = {}) {
 
   app.get('/api/config', (_req, res) => {
     const privacyContact = validEmail(env.PUBLIC_CONTACT_EMAIL) ? env.PUBLIC_CONTACT_EMAIL : null;
-    res.json({ donations: safeDonationConfig(env), privacyContact, adultOnly: true });
+    const demoMode = env.DEMO_MODE === 'true';
+    res.json({ donations: demoMode ? { enabled: false } : safeDonationConfig(env), privacyContact, adultOnly: true, demoMode });
   });
 
   app.get('/api/events', (_req, res) => res.json({ events: EVENTS }));

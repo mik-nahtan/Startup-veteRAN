@@ -72,6 +72,7 @@ function Website() {
 
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
+    {config.demoMode && <div className="demo-notice" role="status">Preview website · Use test details only. Saved submissions may reset when this free service restarts.</div>}
     <div className="announcement"><span>A SHARED PURPOSE. A NEW START.</span><span>Veterans + civilians. Moving forward, together. <ArrowUpRight size={13} /></span></div>
     <header className="site-header">
       <div className="container header-inner">
